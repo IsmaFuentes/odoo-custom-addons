@@ -38,6 +38,7 @@
                         <field name="estado"/>
                         <field name="paginas"/>
                         <field name="activo" readonly="1"/>
+                        <field name="codigo" />
                     </group>
                     <group>
                         <field name="precio"/>

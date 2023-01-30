@@ -50,6 +50,10 @@ class BibliotecaComic(models.Model):
     _rec_name = 'nombre'
     #Atributo nombre
     nombre = fields.Char('Titulo', required=True, index=True)
+
+    # prueba
+    codigo = fields.Char("Código", required=True)
+
     #Atributo para seleccionar entre varios
     estado = fields.Selection(
         [('borrador', 'No disponible'),
@@ -66,6 +70,7 @@ class BibliotecaComic(models.Model):
 
     #Precio del libro    
     precio = fields.Float('Precio')
+    
     #Numero de paginas. 
     paginas = fields.Integer('Numero de páginas',
         #Hace que este atributo este disponible para este grupo de seguridad 
