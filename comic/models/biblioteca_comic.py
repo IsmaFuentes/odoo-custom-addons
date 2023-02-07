@@ -117,3 +117,10 @@ class BibliotecaComic(models.Model):
                 raise models.ValidationError('La fecha de lanzamiento debe ser anterior a la actual')
 
 
+class Socio(models.Model):
+    _name = 'biblioteca.comic.socio'
+    _description = 'Socios de la biblioteca'
+
+    nombre = fields.Char()
+    apellidos = fields.Char()
+    identificador = fields.Integer()
