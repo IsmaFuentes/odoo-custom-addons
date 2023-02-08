@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Definimos como mostramos la vista en el modelo -->
     <record id='biblioteca_comic_socio_action' model='ir.actions.act_window'>
         <field name="name">Socios de la biblioteca</field>
         <field name="res_model">biblioteca.comic.socio</field>
         <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- NAVEGACIÓN -->
     <menuitem name="Socios" id="biblioteca_comic_socios_menu" parent="biblioteca_base_menu" action="biblioteca_comic_socio_action" />
     
     <!-- VISTA DE FORMULARIO -->
@@ -26,13 +26,15 @@
         </field>
     </record>
     
-    <!-- Vista Tree -->
-    <record id="biblioteca_comic_categoria_view_tree" model="ir.ui.view">
+    <!-- VISTA TREE -->
+    <record id="biblioteca_comic_socio_view_tree" model="ir.ui.view">
         <field name="name">Lista de Socios de la biblioteca</field>
         <field name="model">biblioteca.comic.socio</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="identificador" />
                 <field name="nombre" />
+                <field name="apellidos" />
             </tree>
         </field>
     </record>
