@@ -120,7 +120,30 @@ class BibliotecaComic(models.Model):
 class Socio(models.Model):
     _name = 'biblioteca.comic.socio'
     _description = 'Socios de la biblioteca'
+    _rec_name = 'nombre'
 
     nombre = fields.Char()
     apellidos = fields.Char()
     identificador = fields.Integer()
+
+class ComicPrestado(models.Model):
+    _name = 'biblioteca.comic.prestado'
+    _description = "Comics prestados"
+    _rec_name = 'comic'
+
+    socio = fields.Many2one('biblioteca.comic.socio', string="Socio")
+    comic = fields.Many2one('biblioteca.comic', string="Comic")
+    fecha_prestamo = fields.Date('Fecha prestamo')
+    fecha_devolucion = fields.Date('Fecha devolución')
+
+    @api.constrains('fecha_prestamo')
+    def _check_fecha_prestamo(self):
+        for record in self:
+            if record.fecha_prestamo > fields.Date.today():
+                raise ValidationError('La fecha de prestamo debe ser anterior a la actual')
+
+    @api.constrains('fecha_devolucion')
+    def _check_fecha_devolucion(self):
+        for record in self:
+            if record.fecha_devolucion < fields.Date.today():
+                 raise ValidationError('La fecha de devolución debe ser posterior a la actual')

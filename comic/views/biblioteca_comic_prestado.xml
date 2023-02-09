@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='biblioteca_comic_prestado_action' model='ir.actions.act_window'>
+        <field name="name">Comics prestados</field>
+        <field name="res_model">biblioteca.comic.prestado</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- NAVEGACIÓN -->
+    <menuitem name="Comics prestados" id="biblioteca_comic_prestado_menu" parent="biblioteca_base_menu" action="biblioteca_comic_prestado_action" />
+    
+    <!-- VISTA DE FORMULARIO -->
+    <record id="biblioteca_comic_prestado_view_form" model="ir.ui.view">
+        <field name="name">Formulario Comics prestados</field>
+        <field name="model">biblioteca.comic.prestado</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="comic"/>
+                    <field name="socio"/>
+                </group>
+                <group>
+                    <field name="fecha_prestamo" />
+                    <field name="fecha_devolucion" />
+                </group>
+            </form>
+        </field>
+    </record>
+    
+    <!-- VISTA TREE -->
+    <record id="biblioteca_comic_prestado_view_tree" model="ir.ui.view">
+        <field name="name">Lista Comics prestados</field>
+        <field name="model">biblioteca.comic.prestado</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="comic"/>
+                <field name="socio"/>
+                <field name="fecha_prestamo" />
+                <field name="fecha_devolucion" />
+            </tree>
+        </field>
+    </record>
+</odoo>
