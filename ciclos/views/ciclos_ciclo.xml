@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='ciclos_ciclo_action' model='ir.actions.act_window'>
+        <field name="name">Ciclos formativos</field>
+        <field name="res_model">ciclos.ciclo</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- NAVEGACIÓN -->
+    <menuitem name="Ciclos Formativos" id="ciclos_base_menu" />
+    <menuitem name="Ciclos" id="ciclos_ciclo_menu" parent="ciclos_base_menu" action="ciclos_ciclo_action"/>
+    
+    <!-- VISTA DE FORMULARIO -->
+    <record id="ciclos_ciclo_view_form" model="ir.ui.view">
+        <field name="name">Formulario Ciclos formativos</field>
+        <field name="model">ciclos.ciclo</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="nombre" />
+                    <field name="descripcion"/>
+                </group>
+                <group>
+                    <field name="modulos"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    
+    <!-- VISTA TREE -->
+    <record id="ciclos_ciclo_view_tree" model="ir.ui.view">
+        <field name="name">Lista de Ciclos formativos</field>
+        <field name="model">ciclos.ciclo</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nombre" />
+                <field name="descripcion"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

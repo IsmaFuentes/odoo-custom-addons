@@ -10,9 +10,7 @@
     'version': '0.1',
     'depends': ['base'],
     'data': [
-        # 'security/ir.model.access.csv',
-        # 'views/hospital_medico.xml',
-        # 'views/hospital_paciente.xml',
-        # 'views/hospital_diagnostico.xml'
+        'security/ir.model.access.csv',
+        'views/ciclos_ciclo.xml',
     ],
 }
