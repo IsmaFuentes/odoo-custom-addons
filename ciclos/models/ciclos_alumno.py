@@ -11,3 +11,4 @@ class Alumno(models.Model):
     nombre = fields.Char('Nombre', required=True)
     apellidos = fields.Char("Apellidos", required=True)
     expediente = fields.Char("Expediente", required=True)
+    modulos = fields.Many2many("ciclos.modulo")

@@ -11,5 +11,5 @@ class Modulo(models.Model):
     nombre = fields.Char('Nombre', required=True)
     descripcion = fields.Text('Descripción', required=True)
     ciclo = fields.Many2one('ciclos.ciclo')
-    # profesor = fields.Many2one('ciclos.profesor', string="Profesor")
-    # alumnos = fields.Many2many('ciclos.alumno', string="Alumnos")
+    profesor = fields.Many2one('ciclos.profesor')
+    alumnos = fields.Many2many('ciclos.alumno', string="Alumnos")

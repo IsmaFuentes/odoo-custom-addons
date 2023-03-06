@@ -10,3 +10,4 @@ class Profesor(models.Model):
     # propiedades del modelo
     nombre = fields.Char('Nombre', required=True)
     apellidos = fields.Char("Apellidos", required=True)
+    modulos = fields.One2many('ciclos.modulo', 'profesor', string="Modulos")

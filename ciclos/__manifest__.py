@@ -12,5 +12,8 @@
     'data': [
         'security/ir.model.access.csv',
         'views/ciclos_ciclo.xml',
+        'views/ciclos_alumno.xml',
+        'views/ciclos_modulo.xml',
+        'views/ciclos_profesor.xml'
     ],
 }
