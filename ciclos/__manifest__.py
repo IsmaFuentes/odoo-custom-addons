@@ -10,6 +10,7 @@
     'version': '0.1',
     'depends': ['base'],
     'data': [
+        'security/groups.xml',
         'security/ir.model.access.csv',
         'views/ciclos_ciclo.xml',
         'views/ciclos_alumno.xml',
